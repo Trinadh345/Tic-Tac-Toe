@@ -1,0 +1,16 @@
+# Update the package list
+sudo apt update -y
+
+# Install Docker
+sudo apt install docker.io -y
+
+# Start and Enable Docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# VERY IMPORTANT: Give Jenkins permission to use Docker
+sudo usermod -aG docker jenkins
+sudo chmod 666 /var/run/docker.sock
+
+# Restart Jenkins so it notices the new tool
+sudo systemctl restart jenkins
