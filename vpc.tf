@@ -1,6 +1,3 @@
-provider "aws" {
-  region = "ap-south-1"
-}
 
 # 1. VPC క్రియేషన్
 resource "aws_vpc" "prod_vpc" {
